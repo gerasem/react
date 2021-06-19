@@ -8,27 +8,6 @@
   margin: auto;
 }
 
-.header {
-  grid-area: header;
-  background-color: aquamarine;
-}
 
-.header img {
-  width: 60px;
-}
 
-.nav {
-  grid-area: nav;
-}
 
-.content {
-  grid-area: content;
-}
-
-.image-full-width img {
-  width: 100%;
-}
-
-.avatar img {
-  width: 150px;
-}

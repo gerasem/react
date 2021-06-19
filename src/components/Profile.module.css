@@ -1,0 +1,11 @@
+.content {
+    grid-area: content;
+}
+
+.imageFullWidth img {
+    width: 100%;
+}
+
+.avatar img {
+    width: 150px;
+}
