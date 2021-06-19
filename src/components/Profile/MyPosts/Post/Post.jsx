@@ -1,10 +1,10 @@
 import style from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={style.item}>
             <img className={style.image} src="https://via.placeholder.com/150" alt="" />
-            menu 1
+            {props.message}
         </div>
     )
 }
