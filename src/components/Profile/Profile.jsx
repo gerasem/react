@@ -1,4 +1,5 @@
 import style from './Profile.module.css';
+import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
     return (
@@ -10,8 +11,7 @@ const Profile = () => {
                 <img src="https://cdn.svgporn.com/logos/react.svg" />
             </div>
 
-            <div className={style.item}>menu 1</div>
-            <div className={style.item}>menu 2</div>
+            <MyPosts />
 
         </div>
     )
