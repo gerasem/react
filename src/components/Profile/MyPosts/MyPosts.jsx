@@ -2,6 +2,13 @@ import style from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = () => {
+
+    let postsData = [
+        {id: 1, name: 'Hello World', likeCount: 0},
+        {id: 2, name: 'Hi! How are you?', likeCount: 5},
+        {id: 3, name: 'Its my first post', likeCount: 21},
+    ]
+
     return (
         <section>
             <div className="columns">
@@ -17,9 +24,9 @@ const MyPosts = () => {
             <section className="nes-container with-title">
                 <p className="title">Comments</p>
                 <section className="message-list">
-                    <Post message='Hello World' like='0'/>
-                    <Post message='Hi! How are you?' like='5'/>
-                    <Post message='Its my first post' like='20'/>
+
+                    <Post message={postsData[0].name} like={postsData[0].likeCount}/>
+
                 </section>
             </section>
         </section>
