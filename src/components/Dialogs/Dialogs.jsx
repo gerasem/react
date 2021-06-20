@@ -1,4 +1,5 @@
 import style from './Dialogs.module.css';
+import {NavLink} from "react-router-dom";
 
 const Dialogs = () => {
     return (
@@ -9,16 +10,16 @@ const Dialogs = () => {
                     <div className="lists">
                         <ul className={`nes-list is-disc ${style.dialog}`}>
                             <li>
-                                <a className={style.active} href="">Adrian</a>
+                                <NavLink activeClassName={style.active} to="/dialogs/1">Adrian</NavLink>
                             </li>
                             <li>
-                                <a href="">Ann</a>
+                                <NavLink activeClassName={style.active} to="/dialogs/2">Ann</NavLink>
                             </li>
                             <li>
-                                <a href="">Oleg</a>
+                                <NavLink activeClassName={style.active} to="/dialogs/3">Oleg</NavLink>
                             </li>
                             <li>
-                                <a href="">Administrator</a>
+                                <NavLink activeClassName={style.active} to="/dialogs/4">Administrator</NavLink>
                             </li>
                         </ul>
                     </div>

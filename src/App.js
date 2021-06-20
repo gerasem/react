@@ -15,7 +15,7 @@ const App = () => {
                 <section className="columns">
                     <Nav/>
                     <div className="column-main">
-                        <Route path="/dialogs" component={Dialogs}/>
+                        <Route exact path="/dialogs" component={Dialogs}/>
                         <Route path="/profile" component={Profile}/>
                     </div>
                 </section>
