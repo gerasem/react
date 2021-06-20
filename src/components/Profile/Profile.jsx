@@ -25,10 +25,7 @@ const Profile = () => {
                     </div>
                 </div>
             {/*</section>*/}
-
-
             <MyPosts/>
-
         </div>
     )
 }

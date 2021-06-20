@@ -12,8 +12,8 @@ const MyPosts = () => {
                 <div className={style.send}>
                     <button type="button" className="nes-btn is-primary">Send Message</button>
                 </div>
-
             </div>
+
             <section className="nes-container with-title">
                 <p className="title">Comments</p>
                 <section className="message-list">
@@ -22,8 +22,6 @@ const MyPosts = () => {
                     <Post message='Its my first post' like='20'/>
                 </section>
             </section>
-
-
         </section>
     )
 }

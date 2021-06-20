@@ -7,7 +7,10 @@ const Post = (props) => {
             <div className={`nes-balloon from-left ${style.item}`}>
                 <p>{props.message}</p>
             </div>
-            <i className="nes-icon is-medium like"></i><span className={style.likeCount}>{props.like}</span>
+            <i className="nes-icon is-medium like"></i>
+            <span className={style.likeCount}>
+                {props.like}
+            </span>
         </section>
     )
 }

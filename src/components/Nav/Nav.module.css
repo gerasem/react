@@ -1,9 +1,34 @@
 .aside {
     width: 300px;
     margin-right: 40px;
+    height: fit-content;
 }
 
 .item{
     display: block;
     margin-bottom: 20px;
+}
+
+.active{
+    background-color: #f7d51d;
+}
+
+.active:hover{
+    background-color: #f2c409;
+}
+
+.active:focus{
+    box-shadow: 0 0 0 6px rgba(229, 148, 0, .3 );
+}
+
+.active:after{
+    box-shadow: inset -4px -4px #e59400;
+}
+
+.active:hover:after{
+    box-shadow: inset -6px -6px #e59400;
+}
+
+.active:active:not(.is-disabled):after {
+    box-shadow: inset 4px 4px #e59400;
 }

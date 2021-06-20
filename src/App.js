@@ -5,6 +5,7 @@ import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                         <Route path="/profile" component={Profile}/>
                     </div>
                 </section>
+                <Footer/>
             </div>
         </BrowserRouter>
     );
