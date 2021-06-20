@@ -1,8 +1,16 @@
-.header {
-    grid-area: header;
-    background-color: aquamarine;
+.logo {
+    margin-right: 15px;
 }
 
-.header img {
-    width: 60px;
+.brand {
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    margin-left: 40px;
 }

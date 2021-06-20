@@ -1,9 +1,9 @@
-.nav {
-    grid-area: nav;
-    background-color: #858585;
-    padding: 20px;
+.aside {
+    width: 300px;
+    margin-right: 40px;
 }
 
 .item{
-    color: white;
+    display: block;
+    margin-bottom: 20px;
 }

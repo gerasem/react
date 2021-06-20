@@ -2,8 +2,17 @@ import style from './Header.module.css';
 
 const Header = () => {
     return (
-        <header className={style.header}>
-            <img src="https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/" />
+        <header className="columns">
+            <div className="column-main">
+                <h2>
+                    <i className={`nes-jp-logo brand-logo ${style.logo}`}></i>
+                    React App Demo
+                </h2>
+            </div>
+            <div className={style.buttons}>
+                <a className={`nes-text is-primary ${style.button}`} href="#">Login</a>
+                <a className={`nes-text is-success ${style.button}`} href="#">Sign In</a>
+            </div>
         </header>
     )
 }

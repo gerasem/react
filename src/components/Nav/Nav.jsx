@@ -2,21 +2,13 @@ import style from './Nav.module.css';
 
 const Nav = () => {
     return (
-        <nav className={style.nav}>
-            <div className={style.item}>
-                <a>Profile</a>
-            </div>
-            <div className={style.item}>
-                <a>Messages</a>
-            </div>
-            <div className={style.item}>
-                <a>Music</a>
-            </div>
-            <div className={style.item}>
-                <a>Settings</a>
-            </div>
-
-        </nav>
+        <aside className={`nes-container with-title is-centered ${style.aside}`}>
+            <p className="title">Menu</p>
+            <a className={`nes-btn ${style.item}`} href="#">Main Page</a>
+            <a className={`nes-btn ${style.item}`} href="#">Menu</a>
+            <a className={`nes-btn ${style.item}`} href="#">Menu</a>
+            <a className={`nes-btn ${style.item}`} href="#">Menu</a>
+        </aside>
     )
 }
 export default Nav;

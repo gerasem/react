@@ -3,15 +3,31 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
     return (
-        <div className={style.content}>
-            <div className={style.imageFullWidth}>
-                <img src="https://via.placeholder.com/900x300?text=Visit+Blogging.com+Now%20C/O%20https://placeholder.com/" />
-            </div>
-            <div className={style.avatar}>
-                <img src="https://cdn.svgporn.com/logos/react.svg" />
-            </div>
+        <div className="column-main">
+            {/*<div className={style.image}>*/}
+            {/*    <img*/}
+            {/*        src="https://via.placeholder.com/900x300?text=My-First-React-App"/>*/}
+            {/*</div>*/}
+            {/*<section>*/}
+                <div className="nes-container with-title">
+                    <p className="title">About me</p>
+                    <div className="columns">
+                        <img className={`nes-avatar ${style.avatar}`} alt="Gravatar image example"
+                             src="https://cdn.svgporn.com/logos/react.svg" />
+                        <div className="lists">
+                            <ul className="nes-list is-disc">
+                                <li>My Name</li>
+                                <li>Age</li>
+                                <li>City</li>
+                                <li>Country</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {/*</section>*/}
 
-            <MyPosts />
+
+            <MyPosts/>
 
         </div>
     )

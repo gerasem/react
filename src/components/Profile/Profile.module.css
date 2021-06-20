@@ -1,11 +1,9 @@
-.content {
-    grid-area: content;
-}
-
-.imageFullWidth img {
+.image img{
     width: 100%;
 }
 
-.avatar img {
-    width: 150px;
+.avatar{
+    image-rendering: pixelated;
+    width: 120px;
+    height: 120px;
 }
