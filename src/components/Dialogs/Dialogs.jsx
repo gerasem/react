@@ -1,6 +1,22 @@
 import style from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
 
+const DialogItem = (props) => {
+    return (
+        <li>
+            <NavLink activeClassName={style.active} to={"dialogs/" + props.id}>{props.name}</NavLink>
+        </li>
+    )
+}
+
+const Message = (props) => {
+    return (
+        <p className="nes-balloon from-left nes-pointer">
+            {props.message}
+        </p>
+    )
+}
+
 const Dialogs = () => {
     return (
         <div className="columns">
@@ -9,36 +25,21 @@ const Dialogs = () => {
                     <p className="title">Dialogs</p>
                     <div className="lists">
                         <ul className={`nes-list is-disc ${style.dialog}`}>
-                            <li>
-                                <NavLink activeClassName={style.active} to="/dialogs/1">Adrian</NavLink>
-                            </li>
-                            <li>
-                                <NavLink activeClassName={style.active} to="/dialogs/2">Ann</NavLink>
-                            </li>
-                            <li>
-                                <NavLink activeClassName={style.active} to="/dialogs/3">Oleg</NavLink>
-                            </li>
-                            <li>
-                                <NavLink activeClassName={style.active} to="/dialogs/4">Administrator</NavLink>
-                            </li>
+                            <DialogItem id="1" name="Adrian"/>
+                            <DialogItem id="2" name="Ann"/>
+                            <DialogItem id="3" name="Oleg"/>
+                            <DialogItem id="4" name="Administrator"/>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div className="column-main column-main-offset-left">
                 <div className="nes-container with-title">
                     <p className="title">Message</p>
-                    <p className="nes-balloon from-left nes-pointer">
-                        This is not a clickable element, but it's an area of the pointer.
-                    </p>
-
-                    <p className="nes-balloon from-left nes-pointer">
-                        This is not a clickable element, but it's an area of the pointer.
-                    </p>
-
-                    <p className="nes-balloon from-left nes-pointer">
-                        This is not a clickable element, but it's an area of the pointer.
-                    </p>
+                    <Message message="Hello, I'm Dmitry" />
+                    <Message message="How are you?" />
+                    <Message message="This is not a clickable element, but it's an area of the pointer." />
                 </div>
 
             </div>
