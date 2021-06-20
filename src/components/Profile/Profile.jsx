@@ -3,7 +3,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
     return (
-        <div className="column-main">
+        <div>
             {/*<div className={style.image}>*/}
             {/*    <img*/}
             {/*        src="https://via.placeholder.com/900x300?text=My-First-React-App"/>*/}
