@@ -1,21 +1,6 @@
 import style from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
-
-const DialogItem = (props) => {
-    return (
-        <li>
-            <NavLink activeClassName={style.active} to={"dialogs/" + props.id}>{props.name}</NavLink>
-        </li>
-    )
-}
-
-const Message = (props) => {
-    return (
-        <p className="nes-balloon from-left nes-pointer">
-            {props.message}
-        </p>
-    )
-}
+import Message from "./Message/Message";
+import DialogItem from "./DialogItem/DialogItem";
 
 const Dialogs = () => {
 
@@ -44,7 +29,7 @@ const Dialogs = () => {
                     <p className="title">Dialogs</p>
                     <div className="lists">
                         <ul className={`nes-list is-disc ${style.dialog}`}>
-                            { dialogsElements }
+                            {dialogsElements}
                         </ul>
                     </div>
                 </div>
@@ -53,7 +38,7 @@ const Dialogs = () => {
             <div className="column-main column-main-offset-left">
                 <div className="nes-container with-title">
                     <p className="title">Message</p>
-                    { messagesElements }
+                    {messagesElements}
                 </div>
 
             </div>
