@@ -15,3 +15,7 @@ section{
 .column-main{
     flex: 1;
 }
+
+.column-main-offset-left{
+    margin-left: 40px;
+}

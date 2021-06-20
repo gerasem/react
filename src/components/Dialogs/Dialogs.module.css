@@ -1,0 +1,22 @@
+.dialogs {
+    max-width: 300px;
+}
+
+
+.dialog li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.dialog li:before {
+    color: white !important;
+}
+
+.dialogs ul{
+    padding-left: 10px;
+}
+
+.active {
+    margin-left: 10px;
+    text-decoration: underline;
+}
