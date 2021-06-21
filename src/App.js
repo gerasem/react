@@ -13,7 +13,7 @@ const App = (props) => {
             <div className="app-wrapper">
                 <Header/>
                 <section className="columns">
-                    <Nav/>
+                    <Nav state={props.state.sidebar}/>
                     <div className="column-main">
                         {/*<Route exact path="/dialogs" component={Dialogs}/>*/}
                         {/*<Route path="/profile" component={Profile}/>*/}

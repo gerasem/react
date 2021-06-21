@@ -16,8 +16,19 @@ let state = {
             {id: 1, name: 'Adrian'},
             {id: 2, name: 'Ann'},
             {id: 3, name: 'Oleg'},
-            {id: 4, name: 'Administrator'},
+            {id: 4, name: 'Liam'},
+            {id: 5, name: 'William'},
+            {id: 6, name: 'Mia'},
+            {id: 7, name: 'Sophia'},
         ],
+    },
+    sidebar: {
+        friends: [
+            {id: 1, name: 'John'},
+            {id: 2, name: 'Olivia'},
+            {id: 3, name: 'Noah'},
+            {id: 4, name: 'Charlotte'},
+        ]
     }
 }
 

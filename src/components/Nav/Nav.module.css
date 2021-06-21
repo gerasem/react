@@ -32,3 +32,19 @@
 .active:active:not(.is-disabled):after {
     box-shadow: inset 4px 4px #e59400;
 }
+
+.friendsBlock{
+    margin-top: 60px;
+}
+
+.friends{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friend{
+    font-size: 13px;
+    width: 50%;
+    text-align: center;
+    margin: 10px 0;
+}
