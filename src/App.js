@@ -5,7 +5,7 @@ import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import Footer from "./Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 const App = (props) => {
     return (
@@ -18,8 +18,13 @@ const App = (props) => {
                         {/*<Route exact path="/dialogs" component={Dialogs}/>*/}
                         {/*<Route path="/profile" component={Profile}/>*/}
 
-                        <Route exact path="/dialogs" render={ () => <Dialogs dialogs={props.dialogs} messages={props.messages}/> }/>
-                        <Route path="/profile" render={ () => <Profile posts={props.posts}/> }/>
+                        <Route exact
+                               path="/dialogs"
+                               render={ () => <Dialogs
+                                   state={props.state.dialogsPage}/> }/>
+                        <Route path="/profile"
+                               render={ () => <Profile
+                                   state={props.state.profilePage}/> }/>
                     </div>
                 </section>
                 <Footer/>

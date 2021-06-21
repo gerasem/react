@@ -14,7 +14,7 @@ const Profile = (props) => {
                     <ProfileInfo />
                 </div>
             {/*</section>*/}
-            <MyPosts posts={props.posts}/>
+            <MyPosts posts={props.state.posts}/>
         </div>
     )
 }
