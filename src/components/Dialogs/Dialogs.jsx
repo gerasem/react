@@ -2,25 +2,12 @@ import style from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 
-const Dialogs = () => {
-
-    let dialogs = [
-        {id: 1, name: 'Adrian'},
-        {id: 2, name: 'Ann'},
-        {id: 3, name: 'Oleg'},
-        {id: 4, name: 'Administrator'},
-    ]
-
-    let messages = [
-        {id: 1, message: 'Hello, I\'m Dmitry'},
-        {id: 2, message: 'How are you?'},
-        {id: 3, message: 'This is not a clickable element, but it\'s an area of the pointer.'},
-    ]
+const Dialogs = (props) => {
 
     // for each dialogs element - <DialogItem /> tag
-    let dialogsElements = dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
+    let dialogsElements = props.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
 
-    let messagesElements = messages.map(m => <Message message={m.message}/>)
+    let messagesElements = props.messages.map(m => <Message message={m.message}/>)
 
     return (
         <div className="columns">
