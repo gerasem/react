@@ -1,6 +1,7 @@
 import style from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
+import React from "react";
 
 const Dialogs = (props) => {
 
@@ -9,6 +10,12 @@ const Dialogs = (props) => {
 
     let messagesElements = props.state.messages.map(m => <Message message={m.message}/>)
 
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    }
     return (
         <div className="columns">
             <div className={style.dialogs}>
@@ -26,6 +33,20 @@ const Dialogs = (props) => {
                 <div className="nes-container with-title">
                     <p className="title">Message</p>
                     {messagesElements}
+                    <div className="columns">
+                        <div className="column-main">
+                            <label htmlFor="textarea_field">You message</label>
+                            <textarea
+                                id="textarea_field"
+                                className="nes-textarea"
+                                ref={newMessageElement}>
+                    </textarea>
+                        </div>
+                        <div className={style.send}>
+                            <button onClick={addMessage} type="button" className="nes-btn is-primary">Send Message
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
