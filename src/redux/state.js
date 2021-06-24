@@ -1,4 +1,6 @@
-import {renderEntireTree} from "../render";
+let renderEntireTree = () => {
+    console.log("123");
+}
 
 let state = {
     profilePage: {
@@ -65,6 +67,11 @@ export let addMessage = () => {
 export let updateTextareaValueMessage = (newText) => {
     state.dialogsPage.textareaValueText = newText;
     renderEntireTree(state);
+}
+
+
+export const subscribe = (observer) => {
+    renderEntireTree = observer;
 }
 
 export default state;
