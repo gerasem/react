@@ -8,6 +8,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 
 const App = (props) => {
+    // console.log(props.updateNewMessageText);
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -21,11 +22,15 @@ const App = (props) => {
                         <Route exact
                                path="/dialogs"
                                render={ () => <Dialogs
-                                   state={props.state.dialogsPage}/> }/>
+                                   dialogsPage={props.state.dialogsPage}
+                                   addMessage={props.addMessage}
+                                   updateNewMessageText={props.updateNewMessageText}
+                               /> }/>
                         <Route path="/profile"
                                render={ () => <Profile
-                                   state={props.state.profilePage}
+                                   profilePage={props.state.profilePage}
                                    addPost={props.addPost}
+                                   updateNewPostText={props.updateNewPostText}
                                /> }/>
                     </div>
                 </section>

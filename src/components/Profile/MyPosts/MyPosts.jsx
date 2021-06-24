@@ -9,11 +9,13 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addNewPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = '';
+        props.addPost();
     }
 
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
     return (
         <section>
             <div className="columns">
@@ -22,8 +24,10 @@ const MyPosts = (props) => {
                     <textarea
                         id="textarea_field"
                         className="nes-textarea"
-                        ref={newPostElement}>
-                    </textarea>
+                        onChange={onPostChange}
+                        ref={newPostElement}
+                        value={props.newPost}
+                    />
                 </div>
                 <div className={style.send}>
                     <button onClick={addNewPost} type="button" className="nes-btn is-primary">Send Message</button>

@@ -7,6 +7,7 @@ let state = {
             {id: 2, name: 'Hi! How are you?', likeCount: 5},
             {id: 3, name: 'Its my first post', likeCount: 21},
         ],
+        textareaValueText: 'your message...'
     },
     dialogsPage: {
         messages: [
@@ -23,6 +24,7 @@ let state = {
             {id: 6, name: 'Mia'},
             {id: 7, name: 'Sophia'},
         ],
+        textareaValueText: 'your message...'
     },
     sidebar: {
         friends: [
@@ -34,13 +36,34 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        name: postMessage,
+        name: state.profilePage.textareaValueText,
         likeCount: 0
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.textareaValueText = '';
+    renderEntireTree(state);
+}
+
+export let updateTextareaValueProfile = (newText) => {
+    state.profilePage.textareaValueText = newText;
+    renderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 4,
+        name: state.dialogsPage.textareaValueText,
+    }
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.textareaValueText = '';
+    renderEntireTree(state);
+}
+
+export let updateTextareaValueMessage = (newText) => {
+    state.dialogsPage.textareaValueText = newText;
     renderEntireTree(state);
 }
 

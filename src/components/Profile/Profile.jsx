@@ -14,7 +14,12 @@ const Profile = (props) => {
                     <ProfileInfo />
                 </div>
             {/*</section>*/}
-            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+            <MyPosts
+                posts={props.profilePage.posts}
+                addPost={props.addPost}
+                newPost={props.profilePage.textareaValueText}
+                updateNewPostText={props.updateNewPostText}
+            />
         </div>
     )
 }

@@ -48,3 +48,7 @@
     text-align: center;
     margin: 10px 0;
 }
+
+.avatar{
+    image-rendering: pixelated;
+}

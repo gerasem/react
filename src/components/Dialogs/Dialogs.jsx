@@ -6,16 +6,24 @@ import React from "react";
 const Dialogs = (props) => {
 
     // for each dialogs element - <DialogItem /> tag
-    let dialogsElements = props.state.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
+    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
 
-    let messagesElements = props.state.messages.map(m => <Message message={m.message}/>)
+    let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message}/>)
 
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text);
+        props.addMessage();
     }
+
+    window.test = props
+
+    let onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        // console.log(text);
+        props.updateNewMessageText(text);
+    }
+
     return (
         <div className="columns">
             <div className={style.dialogs}>
@@ -39,8 +47,10 @@ const Dialogs = (props) => {
                             <textarea
                                 id="textarea_field"
                                 className="nes-textarea"
-                                ref={newMessageElement}>
-                    </textarea>
+                                ref={newMessageElement}
+                                onChange={onMessageChange}
+                                value={props.dialogsPage.textareaValueText}/>
+
                         </div>
                         <div className={style.send}>
                             <button onClick={addMessage} type="button" className="nes-btn is-primary">Send Message
