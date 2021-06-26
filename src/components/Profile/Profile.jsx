@@ -16,9 +16,8 @@ const Profile = (props) => {
             {/*</section>*/}
             <MyPosts
                 posts={props.profilePage.posts}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
                 newPost={props.profilePage.textareaValueText}
-                updateNewPostText={props.updateNewPostText}
             />
         </div>
     )

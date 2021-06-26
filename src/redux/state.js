@@ -35,37 +35,36 @@ let store = {
         }
     },
     _callSubscriber() {
-        console.log("123");
+        console.log("do not use this function");
     },
     getState() {
         return this._state;
     },
-    addPost() {
-        let newPost = {
-            id: 5,
-            name: this._state.profilePage.textareaValueText,
-            likeCount: 0
+    dispatch(action) { // example: type: 'ADD-POST'
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                name: this._state.profilePage.textareaValueText,
+                likeCount: 0
+            }
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.textareaValueText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-TEXTAREA-VALUE-PROFILE') {
+            this._state.profilePage.textareaValueText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 4,
+                name: this._state.dialogsPage.textareaValueText,
+            }
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.textareaValueText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-TEXTAREA-VALUE-MESSAGE'){
+            this._state.dialogsPage.textareaValueText = action.newText;
+            this._callSubscriber(this._state);
         }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.textareaValueText = '';
-        this._callSubscriber(this._state);
-    },
-    updateTextareaValueProfile(newText) {
-        this._state.profilePage.textareaValueText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 4,
-            name:  this._state.dialogsPage.textareaValueText,
-        }
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.textareaValueText = '';
-        this._callSubscriber(this._state);
-    },
-    updateTextareaValueMessage(newText) {
-        this._state.dialogsPage.textareaValueText = newText;
-        this._callSubscriber(this._state);
     },
     subscribe(observer) {
         this._callSubscriber = observer;

@@ -10,10 +10,7 @@ let renderEntireTree = (state) => {
         <React.StrictMode>
             <App
                 state={state}
-                addPost={store.addPost.bind(store)}
-                updateNewPostText={store.updateTextareaValueProfile.bind(store)}
-                addMessage={store.addMessage.bind(store)}
-                updateNewMessageText={store.updateTextareaValueMessage.bind(store)}
+                dispatch={store.dispatch.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')
