@@ -5,22 +5,24 @@ import React from "react";
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
-
+    let state = props.store.getState().dialogsPage;
     // for each dialogs element - <DialogItem /> tag
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
 
-    let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message}/>)
+    let dialogsElements = state.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);
+    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
 
-    let newMessageElement = React.createRef();
+    // console.log(messagesElements);
+
+    // let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.store.dispatch(addMessageActionCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-         let action = updateNewMessageTextActionCreator(text);
-        props.dispatch(action);
+    let onMessageChange = (e) => {
+        let text = e.target.value;
+        let action = updateNewMessageTextActionCreator(text);
+        props.store.dispatch(action);
     }
 
     return (
@@ -46,9 +48,9 @@ const Dialogs = (props) => {
                             <textarea
                                 id="textarea_field"
                                 className="nes-textarea"
-                                ref={newMessageElement}
+                                // ref={newMessageElement}
                                 onChange={onMessageChange}
-                                value={props.dialogsPage.textareaValueText}/>
+                                value={state.textareaValueText}/>
 
                         </div>
                         <div className={style.send}>

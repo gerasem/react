@@ -7,14 +7,13 @@ const MyPosts = (props) => {
 
     let postsElements = props.posts.map(p => <Post message={p.name} like={p.likeCount}/>)
 
-    let newPostElement = React.createRef();
 
     let addNewPost = () => {
         props.dispatch(addPostActionCreator());
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
     }
@@ -27,7 +26,6 @@ const MyPosts = (props) => {
                         id="textarea_field"
                         className="nes-textarea"
                         onChange={onPostChange}
-                        ref={newPostElement}
                         value={props.newPost}
                     />
                 </div>
