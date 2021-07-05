@@ -1,7 +1,16 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_TEXTAREA_VALUE_PROFILE = 'UPDATE-TEXTAREA-VALUE-PROFILE';
 
-const profileReducer = (state, action) => {
+let initialState = {
+    posts: [
+        {id: 1, name: 'Hello World', likeCount: 0},
+        {id: 2, name: 'Hi! How are you?', likeCount: 5},
+        {id: 3, name: 'Its my first post', likeCount: 21},
+    ],
+    textareaValueText: 'your message...'
+}
+
+const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST:
