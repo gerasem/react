@@ -25,7 +25,7 @@ const dialogsReducer = (state = initialState, action) => {
         case ADD_MESSAGE:
             let newMessage = {
                 id: 4,
-                name: state.textareaValueText,
+                message: state.textareaValueText,
             }
             state.messages.push(newMessage);
             state.textareaValueText = '';
