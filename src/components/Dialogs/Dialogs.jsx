@@ -1,28 +1,21 @@
 import style from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
-import React from "react";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
-    let state = props.store.getState().dialogsPage;
-    // for each dialogs element - <DialogItem /> tag
+    let state = props.dialogsPage
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>);
-    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
+    let dialogsElements = state.dialogs.map(d => <DialogItem id={d.id} name={d.name}/>)
+    let messagesElements = state.messages.map(m => <Message message={m.message}/>)
+    let newMessageBody = state.textareaValueText
 
-    // console.log(messagesElements);
-
-    // let newMessageElement = React.createRef();
-
-    let addMessage = () => {
-        props.store.dispatch(addMessageActionCreator());
+    let onSendMessageClick = () => {
+        props.sendMessage()
     }
 
     let onMessageChange = (e) => {
-        let text = e.target.value;
-        let action = updateNewMessageTextActionCreator(text);
-        props.store.dispatch(action);
+        let text = e.target.value
+        props.updateNewMessageText(text)
     }
 
     return (
@@ -44,17 +37,17 @@ const Dialogs = (props) => {
                     {messagesElements}
                     <div className="columns">
                         <div className="column-main">
-                            <label htmlFor="textarea_field">You message</label>
+                            <label htmlFor="textarea_field">Your message</label>
                             <textarea
                                 id="textarea_field"
                                 className="nes-textarea"
                                 // ref={newMessageElement}
                                 onChange={onMessageChange}
-                                value={state.textareaValueText}/>
+                                value={newMessageBody}/>
 
                         </div>
                         <div className={style.send}>
-                            <button onClick={addMessage} type="button" className="nes-btn is-primary">Send Message
+                            <button onClick={onSendMessageClick} type="button" className="nes-btn is-primary">Send Message
                             </button>
                         </div>
                     </div>

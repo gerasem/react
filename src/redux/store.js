@@ -57,6 +57,5 @@ let store = {
     }
 }
 
-// console debug store
-window.store = store;
+
 export default store;

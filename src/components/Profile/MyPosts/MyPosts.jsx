@@ -1,27 +1,24 @@
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
-import React from "react";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 const MyPosts = (props) => {
 
     let postsElements = props.posts.map(p => <Post message={p.name} like={p.likeCount}/>)
 
-
-    let addNewPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
 
     let onPostChange = (e) => {
         let text = e.target.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
     }
+
     return (
         <section>
             <div className="columns">
                 <div className="column-main">
-                    <label htmlFor="textarea_field">You message</label>
+                    <label htmlFor="textarea_field">Your message</label>
                     <textarea
                         id="textarea_field"
                         className="nes-textarea"
@@ -30,7 +27,7 @@ const MyPosts = (props) => {
                     />
                 </div>
                 <div className={style.send}>
-                    <button onClick={addNewPost} type="button" className="nes-btn is-primary">Send Message</button>
+                    <button onClick={onAddPost} type="button" className="nes-btn is-primary">Send Message</button>
                 </div>
             </div>
 
