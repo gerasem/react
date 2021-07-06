@@ -1,7 +1,10 @@
+/*
 import style from './Nav.module.css';
 import {NavLink} from "react-router-dom";
 import Friend from "./Friend/Friend";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
+import MyPosts from "../Profile/MyPosts/MyPosts";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../redux/profile-reducer";
 
 const Nav = () => {
     return (
@@ -29,4 +32,25 @@ const Nav = () => {
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        posts: state.profilePage.posts,
+        newPost: state.profilePage.textareaValueText
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: () => {
+            dispatch(addPostActionCreator())
+        },
+        updateNewPostText: (text) => {
+            dispatch(updateNewPostTextActionCreator(text))
+        },
+    }
+}
+
+const SuperNav = connect(mapStateToProps, mapDispatchToProps)(Nav)
+
 export default Nav;
+*/
