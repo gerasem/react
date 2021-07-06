@@ -1,7 +1,7 @@
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = (props) => {
+const Profile = () => {
     return (
         <div>
             <div className="nes-container with-title">
@@ -9,7 +9,7 @@ const Profile = (props) => {
                 <ProfileInfo/>
             </div>
 
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer/>
         </div>
     )
 }

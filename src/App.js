@@ -7,22 +7,20 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <section className="columns">
-                    <Nav state={props.state.sidebar}/>
+                    <Nav/>
                     <div className="column-main">
-                        {/*<Route exact path="/dialogs" component={Dialogs}/>
-                        <Route path="/profile" component={Profile}/>*/}
                         <Route exact
                                path="/dialogs"
-                               render={() => <DialogsContainer store={props.store}/>}
+                               render={() => <DialogsContainer/>}
                         />
                         <Route path="/profile"
-                               render={() => <Profile store={props.store}/>}
+                               render={() => <Profile/>}
                         />
                     </div>
                 </section>
