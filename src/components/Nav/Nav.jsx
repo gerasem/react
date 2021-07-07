@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import Friend from "./Friend/Friend";
 
 const Nav = (props) => {
-    let friendsElements = props.friends.map(d => <Friend name={d.name}/>)
+    let friendsElements = props.friends.map(d => <Friend key={d.id} name={d.name}/>)
 
     return (
         <aside className={`nes-container with-title is-centered ${style.aside}`}>
