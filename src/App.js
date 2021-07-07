@@ -6,6 +6,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavContainer from "./components/Nav/NavContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = () => {
     return (
@@ -17,11 +18,11 @@ const App = () => {
                     <div className="column-main">
                         <Route exact
                                path="/dialogs"
-                               render={() => <DialogsContainer/>}
-                        />
+                               render={() => <DialogsContainer/>} />
                         <Route path="/profile"
-                               render={() => <Profile/>}
-                        />
+                               render={() => <Profile/>} />
+                        <Route path="/users"
+                               render={() => <UsersContainer />} />
                     </div>
                 </section>
                 <Footer/>

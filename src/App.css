@@ -19,3 +19,7 @@ section{
 .column-main-offset-left{
     margin-left: 40px;
 }
+
+.avatar{
+    image-rendering: pixelated;
+}
