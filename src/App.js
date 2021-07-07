@@ -1,11 +1,11 @@
 import 'nes.css/css/nes.min.css';
 import './App.css';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
 import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import NavContainer from "./components/Nav/NavContainer";
 
 const App = () => {
     return (
@@ -13,7 +13,7 @@ const App = () => {
             <div className="app-wrapper">
                 <Header/>
                 <section className="columns">
-                    {/*<Nav/>*/}
+                    <NavContainer/>
                     <div className="column-main">
                         <Route exact
                                path="/dialogs"

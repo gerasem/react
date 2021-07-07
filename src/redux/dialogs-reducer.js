@@ -27,8 +27,10 @@ const dialogsReducer = (state = initialState, action) => {
                 id: 4,
                 message: state.textareaValueText,
             }
-            let stateCopy = {...state}
-            stateCopy.messages = [...state.messages]
+            let stateCopy = {
+                ...state,
+                messages: [...state.messages]
+            }
             stateCopy.messages.push(newMessage)
             stateCopy.textareaValueText = ''
             return stateCopy
