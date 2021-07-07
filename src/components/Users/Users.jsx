@@ -1,29 +1,11 @@
+import * as axios from "axios";
+
 const Users = (props) => {
-    if(props.users.length === 0){
-        props.setUsers([{
-            id: 1,
-            photoUrl: '/avatar.jpg',
-            followed: true,
-            fullName: 'Alex',
-            status: 'Hello world!',
-            location: {city: 'Berlin', country: 'Germany'}
-        },
-            {
-                id: 2,
-                photoUrl: '/avatar.jpg',
-                followed: false,
-                fullName: 'Max',
-                status: 'My status',
-                location: {city: 'Moscow', country: 'Russia'}
-            },
-            {
-                id: 3,
-                photoUrl: '/avatar.jpg',
-                followed: true,
-                fullName: 'Andrew',
-                status: 'I\'m boss',
-                location: {city: 'Vienna', country: 'Austria'}
-            },])
+    if (props.users.length === 0) {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.setUsers(response.data.items)
+            })
     }
 
     return (
@@ -34,11 +16,12 @@ const Users = (props) => {
                         <div className="nes-container">
                             <div className="columns">
                                 <div className="column">
-                                    <img className="nes-avatar is-rounded is-large avatar" src={u.photoUrl}/>
+                                    <img className="nes-avatar is-rounded is-large avatar"
+                                         src={u.photos.small != null ? u.photos.small : process.env.PUBLIC_URL + '/avatar.jpg'}/>
                                 </div>
                                 <div className="column-main column-main-offset-left">
-                                    <h3>{u.fullName}</h3>
-                                    <p>{u.location.city}, {u.location.country}</p>
+                                    <h3>{u.name}</h3>
+                                    <p>{"u.location.city"}, {"u.location.country"}</p>
                                     <span className="nes-text is-disabled">{u.status}</span>
                                 </div>
                                 <div className="column">
