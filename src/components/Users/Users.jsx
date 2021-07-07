@@ -1,16 +1,20 @@
 import * as axios from "axios";
 
 const Users = (props) => {
-    if (props.users.length === 0) {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items)
-            })
+
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios.get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items)
+                })
+        }
     }
 
     return (
         <div>
             <h1>Users</h1>
+            <button onClick={getUsers} type="button" className="nes-btn is-success">Get Users</button>
             {
                 props.users.map(u => <section key={u.id}>
                         <div className="nes-container">
