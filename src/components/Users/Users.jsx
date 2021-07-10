@@ -1,3 +1,5 @@
+import {NavLink} from "react-router-dom";
+
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) // 4.5 -> 5
 
@@ -15,8 +17,10 @@ const Users = (props) => {
                         <div className="nes-container">
                             <div className="columns">
                                 <div className="column">
+                                    <NavLink to={'/profile/' + u.id}>
                                     <img className="nes-avatar is-rounded is-large avatar"
                                          src={u.photos.small != null ? u.photos.small : process.env.PUBLIC_URL + '/avatar.jpg'}/>
+                                    </NavLink>
                                 </div>
                                 <div className="column-main column-main-offset-left">
                                     <h3>{u.name}</h3>

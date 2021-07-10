@@ -31,3 +31,12 @@ section{
     text-align: center;
     z-index: 9;
 }
+
+.avatar-description{
+    margin-left: 40px;
+}
+
+.avatar-social{
+    min-width: 150px;
+    display: inline-block;
+}

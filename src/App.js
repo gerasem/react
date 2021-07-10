@@ -1,12 +1,12 @@
 import 'nes.css/css/nes.min.css';
 import './App.css';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
 import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavContainer from "./components/Nav/NavContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const App = () => {
     return (
@@ -20,7 +20,7 @@ const App = () => {
                                path="/dialogs"
                                render={() => <DialogsContainer/>} />
                         <Route path="/profile"
-                               render={() => <Profile/>} />
+                               render={() => <ProfileContainer/>} />
                         <Route path="/users"
                                render={() => <UsersContainer />} />
                     </div>
