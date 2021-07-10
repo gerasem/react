@@ -51,7 +51,7 @@ const Users = (props) => {
                                 onClick={(e) => {
                                     props.onPageChanged(p)
                                 }}
-                                className={`nes-btn ${props.currentPage === p ? 'is-warning' : 'is-primary'}`}>{p}</button>
+                                className={`nes-btn paginator ${props.currentPage === p ? 'is-warning' : 'is-primary'}`}>{p}</button>
                     )
                 })}
             </div>

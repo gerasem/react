@@ -1,6 +1,5 @@
 import style from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
-import Friend from "../../Nav/Friend/Friend";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -9,11 +8,10 @@ const ProfileInfo = (props) => {
 
     let user = props.profile;
 
-    console.log(user.contacts)
     return (
         <div className="columns">
             <img className={`nes-avatar ${style.avatar}`} alt={user.fullName}
-                 src={props.profile.photos.large}/>
+                 src={props.profile.photos.large ? props.profile.photos.large : '/avatar.jpg'}/>
             <div className="avatar-description">
                 <h2 ><span className="nes-text is-primary">Name: </span>{user.fullName}</h2>
                 <div><span className="nes-text is-primary">About Me: </span>{user.aboutMe}</div>

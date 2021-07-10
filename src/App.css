@@ -40,3 +40,8 @@ section{
     min-width: 150px;
     display: inline-block;
 }
+
+.paginator{
+    margin: 6px;
+    min-width: 90px;
+}
