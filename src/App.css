@@ -45,3 +45,7 @@ section{
     margin: 6px;
     min-width: 90px;
 }
+
+small{
+    font-size: 60%;
+}
