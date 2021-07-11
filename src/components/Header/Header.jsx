@@ -1,7 +1,7 @@
 import style from './Header.module.css';
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className="columns">
             <div className="column-main">
@@ -14,8 +14,10 @@ const Header = () => {
 
             </div>
             <div className={style.buttons}>
-                <a className={`nes-text is-primary ${style.button}`} href="#">Login</a>
-                <a className={`nes-text is-success ${style.button}`} href="#">Sign In</a>
+                {props.isAuth ? <>Hello, <span className="nes-text is-primary">{props.login}</span>!</>
+                    :<><NavLink className={`nes-text is-primary ${style.button}`} to={'/login'}>Login</NavLink>
+                    <NavLink className={`nes-text is-success ${style.button}`} to={'/'}>Sign In</NavLink></>
+                }
             </div>
         </header>
     )

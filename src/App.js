@@ -1,18 +1,18 @@
 import 'nes.css/css/nes.min.css';
 import './App.css';
-import Header from './components/Header/Header';
 import {BrowserRouter, Route} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavContainer from "./components/Nav/NavContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
-                <Header/>
+                <HeaderContainer/>
                 <section className="columns">
                     <NavContainer/>
                     <div className="column-main">
