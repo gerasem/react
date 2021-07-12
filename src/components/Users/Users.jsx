@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
+import {usersAPI} from "../../api/api";
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) // 4.5 -> 5
@@ -29,31 +29,14 @@ const Users = (props) => {
                                 <div className="column">
                                     {u.followed
                                         ? <button onClick={() => {
-                                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    'API-KEY': '9a586ed4-f2cf-4a28-a8ca-85406d409808'
-                                                }
+                                            usersAPI.follow(u.id).then(id => {
+                                                props.unfollow(id)
                                             })
-                                                .then(response => {
-                                                    if(response.data.resultCode === 0) {
-                                                        props.unfollow(u.id)
-                                                    }
-                                                })
-                                            props.unfollow(u.id)
                                         }} type="button" className="nes-btn">Unfollow</button>
                                         : <button onClick={() => {
-                                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    'API-KEY': '9a586ed4-f2cf-4a28-a8ca-85406d409808'
-                                                }
+                                            usersAPI.unfollow(u.id).then(id => {
+                                                props.follow(id)
                                             })
-                                                .then(response => {
-                                                    if(response.data.resultCode === 0) {
-                                                        props.follow(u.id)
-                                                    }
-                                                })
                                         }} type="button" className="nes-btn is-primary">Follow</button>
                                     }
                                 </div>
