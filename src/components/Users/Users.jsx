@@ -1,6 +1,4 @@
 import {NavLink} from "react-router-dom";
-import {usersAPI} from "../../api/api";
-import {toggleFollowingProgress} from "../../redux/users-reducer";
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) // 4.5 -> 5
@@ -31,20 +29,12 @@ const Users = (props) => {
                                     {u.followed
                                         ? <button disabled={props.followingInProgress.some(id => id === u.id)}
                                                   onClick={() => {
-                                                      props.toggleFollowingProgress(true, u.id)
-                                                      usersAPI.follow(u.id).then(id => {
-                                                          props.unfollow(id)
-                                                          props.toggleFollowingProgress(false, u.id)
-                                                      })
+                                                     props.unfollow(u.id)
                                                   }} type="button"
                                                   className={"nes-btn " + (props.followingInProgress.some(id => id === u.id) ? "is-disabled" : "")}>Unfollow</button>
                                         : <button disabled={props.followingInProgress.some(id => id === u.id)}
                                                   onClick={() => {
-                                                      props.toggleFollowingProgress(true, u.id)
-                                                      usersAPI.unfollow(u.id).then(id => {
-                                                          props.follow(id)
-                                                          props.toggleFollowingProgress(false, u.id)
-                                                      })
+                                                      props.follow(u.id)
                                                   }} type="button"
                                                   className={"nes-btn is-primary " + (props.followingInProgress.some(id => id === u.id) ? "is-disabled" : "")}>Follow</button>
                                     }
