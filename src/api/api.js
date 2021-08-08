@@ -15,17 +15,8 @@ export const usersAPI = {
             return response.data
         })
     },
-    getUser(userId) {
-        return instance.get(`/profile/` + userId).then(response => {
-            return response.data
-        })
-    },
-    authMe() {
-        return instance.get(`auth/me`).then(response => {
-                if(response.data.resultCode === 0) {
-                    return response.data
-                }
-            })
+    getProfile(userId) {
+        return instance.get(`/profile/` + userId)
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
@@ -33,4 +24,10 @@ export const usersAPI = {
     follow(userId) {
         return instance.post(`follow/${userId}`)
     }
+}
+
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`)
+    },
 }
