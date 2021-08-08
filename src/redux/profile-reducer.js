@@ -1,4 +1,4 @@
-import {usersAPI} from "../api/api";
+import {authAPI, usersAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_TEXTAREA_VALUE_PROFILE = 'UPDATE-TEXTAREA-VALUE-PROFILE';
@@ -49,9 +49,21 @@ export const setUserProfileAC = (profile) => ({type: SET_USER_PROFILE, profile})
 
 //thunk
 export const getUserProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(userId).then(response => {
-       dispatch(setUserProfileAC(response.data))
-    })
+    if(!userId){
+        authAPI.me().then(response => {
+            if (response.data.resultCode === 0) {
+                usersAPI.getProfile(response.data.data.id).then(response => {
+                    dispatch(setUserProfileAC(response.data))
+                })
+            }
+
+        })
+    } else{
+        usersAPI.getProfile(userId).then(response => {
+            dispatch(setUserProfileAC(response.data))
+        })
+    }
+
 }
 
 export default profileReducer

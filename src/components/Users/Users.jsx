@@ -22,7 +22,7 @@ const Users = (props) => {
                                     </NavLink>
                                 </div>
                                 <div className="column-main column-main-offset-left">
-                                    <h3>{u.name}</h3>
+                                    <h3><NavLink to={'/profile/' + u.id}>{u.name}</NavLink></h3>
                                     <span className="nes-text is-disabled">{u.status}</span>
                                 </div>
                                 <div className="column">

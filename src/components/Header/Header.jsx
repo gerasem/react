@@ -14,7 +14,7 @@ const Header = (props) => {
 
             </div>
             <div className={style.buttons}>
-                {props.isAuth ? <>Hello, <span className="nes-text is-primary">{props.login}</span>!</>
+                {props.isAuth ? <>Hello, <NavLink to={'/profile'} className="nes-text is-primary">{props.login}</NavLink>!</>
                     :<><NavLink className={`nes-text is-primary ${style.button}`} to={'/login'}>Login</NavLink>
                     <NavLink className={`nes-text is-success ${style.button}`} to={'/'}>Sign In</NavLink></>
                 }
