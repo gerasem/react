@@ -2,11 +2,11 @@ import style from './../Nav.module.css';
 
 const Friend = (props) => {
     return (
-        <a href="#" className={style.friend}>
-            <img className={"nes-avatar is-rounded is-large avatar"} alt="Gravatar image example"
+        <span className={style.friend}>
+            <img className={"nes-avatar is-rounded is-large avatar"} alt={props.name}
                  src={props.avatar}/>
             <span>{props.name}</span>
-        </a>
+        </span>
     )
 }
 export default Friend;

@@ -18,7 +18,9 @@ const Users = (props) => {
                                 <div className="column">
                                     <NavLink to={'/profile/' + u.id}>
                                         <img className="nes-avatar is-rounded is-large avatar"
-                                             src={u.photos.small != null ? u.photos.small : process.env.PUBLIC_URL + '/avatar.jpg'}/>
+                                             src={u.photos.small != null ? u.photos.small : process.env.PUBLIC_URL + '/avatar.jpg'}
+                                             alt={u.name}
+                                        />
                                     </NavLink>
                                 </div>
                                 <div className="column-main column-main-offset-left">
@@ -49,7 +51,7 @@ const Users = (props) => {
             <div>
                 {pages.map(p => {
                     return (
-                        <button type="button"
+                        <button key={p} type="button"
                                 onClick={(e) => {
                                     props.onPageChanged(p)
                                 }}

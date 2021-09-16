@@ -32,6 +32,8 @@ const ProfileInfo = (props) => {
                                         <span>{value}</span>
                                     </li>
                                 )
+                            } else {
+                                return false
                             }
                         })}
                     </ul>
